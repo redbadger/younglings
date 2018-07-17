@@ -5,13 +5,13 @@
 @font-face {
   font-family: "proxima-nova-bold";
   font-weight: bold;
-  src: url("../fonts/proxima-nova-bold.otf") format("truetype");
+  src: url("../assets/fonts/proxima-nova-bold.otf") format("truetype");
 }
 
 @font-face {
   font-family: "sentinel-bold";
   font-weight: bold;
-  src: url("../fonts/sentinel-bold.otf") format("truetype");
+  src: url("../assets/fonts/sentinel-bold.otf") format("truetype");
 }
 
 :root {
