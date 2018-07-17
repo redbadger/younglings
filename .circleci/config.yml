@@ -1,0 +1,58 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+
+      - deploy:
+          name: Deploy code changes
+          command: |
+            if [ $CIRCLE_BRANCH == "master" ]; then
+              echo "-----"
+              echo "Deploying to staging environment!"
+              echo "-----"
+              echo ""
+
+              aws s3 sync ./src s3://younglings-staging --acl public-read
+
+              echo ""
+              echo "-----"
+              echo "Deployed successfully! Your changes can be seen here:"
+              echo "https://younglings-staging.s3-eu-west-1.amazonaws.com/index.html"
+              echo "-----"
+            elif ! [ -z $CIRCLE_TAG ]; then
+              echo "-----"
+              echo "Deploying to production environment!"
+              echo "-----"
+              echo ""
+
+              aws s3 sync ./src s3://younglings-production --acl public-read
+
+              echo ""
+              echo "-----"
+              echo "Deployed successfully! Your changes can be seen here:"
+              echo "https://younglings-production.s3-eu-west-1.amazonaws.com/index.html"
+              echo "-----"
+            else
+              echo "-----"
+              echo "Deploying to feature branch environment!"
+              echo "-----"
+              echo ""
+
+              aws s3api create-bucket --acl public-read --bucket younglings-$CIRCLE_BRANCH --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1 2> /dev/null || true
+              aws s3 sync ./src s3://younglings-$CIRCLE_BRANCH --acl public-read
+
+              echo ""
+              echo "-----"
+              echo "Deployed successfully! Your changes can be seen here:"
+              echo "https://younglings-$CIRCLE_BRANCH.s3-eu-west-1.amazonaws.com/index.html"
+              echo "-----"
+            fi
+
