@@ -9,17 +9,27 @@ jobs:
       - checkout
 
       - run:
+          name: Install Ack
+          command: sudo apt-get install ack-grep
+
+      - run:
           name: Validate HTML
           command: |
+            error=false
+            echo ""
+
             for f in $(find . -name '*.html')
             do
               echo "Validating HTML for $f"
-              python ./lib/html5check.py $f -h --encoding=utf-8
+              ! python ./lib/html5check.py $f -h --encoding=utf-8 | ack-grep --passthru --match "Error" --nocolor
+              [[ "$?" -gt "0" ]] && error=true
               echo ""
             done
 
+            $error && exit 1 || exit 0
+
       - run:
-          name: Install awscli
+          name: Install AWS CLI
           command: sudo pip install awscli
 
       - deploy:
