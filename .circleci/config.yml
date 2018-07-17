@@ -7,6 +7,17 @@ jobs:
 
     steps:
       - checkout
+
+      - run:
+          name: Validate HTML
+          command: |
+            for f in $(find . -name '*.html')
+            do
+              echo "Validating HTML for $f"
+              python ./lib/html5check.py $f -h --encoding=utf-8
+              echo ""
+            done
+
       - run:
           name: Install awscli
           command: sudo pip install awscli
