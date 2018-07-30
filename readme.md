@@ -13,6 +13,8 @@ This is a [Badger Way - Dev Edition](https://docs.google.com/presentation/d/1Rni
 
 ## Instructions
 
+- Please _clone_ this repo to your _Desktop_ folder using the folowing URL `https://github.com/redbadger/iceberg.git` ![](./instructions/clone.gif)
+- On GitHub Desktop create a new branch with your first and lastname ![](./instructions/new-branch.gif)
 - Please, navigate to [`src/template`](../src/template) folder and copy and paste changing its name to your first and lastname
 
   - `template` ---> `paul-roper`
@@ -20,6 +22,7 @@ This is a [Badger Way - Dev Edition](https://docs.google.com/presentation/d/1Rni
 - Develop a Red Badger business card as per design ![](./instructions/design.png)
 
   - All assets (fonts and images) are linked to the HTML document so you don't need to do it
+  - We set a [solutions](./src/solution) folder, if you need a hint/clue/help
   - Colours and font families are in your CSS template
   - Please, follow these requirements
     - [x] Business cards dimensions are 430px width and 300px height
