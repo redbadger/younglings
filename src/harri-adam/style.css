@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "proxima-nova-bold";
+  font-weight: bold;
+  src: url("../assets/fonts/proxima-nova-bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "sentinel-bold";
+  font-weight: bold;
+  src: url("../assets/fonts/sentinel-bold.otf") format("truetype");
+}
+
+:root {
+  --black: rgb(19, 14, 13);
+  --grey: rgb(244, 243, 243);
+  --presentation-background: rgb(204, 204, 204);
+  --red: rgb(231, 43, 71);
+  --sans-serif: "proxima-nova-bold", sans-serif;
+  --serif: "sentinel-bold", serif;
+  --white: rgb(255, 255, 255);
+}
+
+body {
+  align-items: center;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.back {
+  padding: 50px;
+}
+
+.back ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: 14px solid var(--white);
+  height: 300px;
+  width: 430px;
+}
+
+.details {
+  position: relative;
+}
+
+.front {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.sally {
+  bottom: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 12.5%;
+}
