@@ -21,16 +21,38 @@ This is a [Badger Way - Dev Edition](https://docs.google.com/presentation/d/1Rni
 
 - Add your details to the business card ![](./instructions/design.png)
 
-- Push your changes and you can see it on the following enviroments
-  - Testing
-    ```
-    https://younglings-<BRANCH_NAME>.s3-eu-west-1.amazonaws.com/index.html
-    ```
-  - Staging
-    ```
-    https://younglings-staging.s3-eu-west-1.amazonaws.com/index.html
-    ```
-  - Production
-    ```
-    https://younglings-production.s3-eu-west-1.amazonaws.com/index.html
-    ```
+- Push your changes and you can see it on the following enviroment
+  ```
+  https://younglings-<BRANCH_NAME>.s3-eu-west-1.amazonaws.com/index.html
+  ```
+  Just replace <BRANCH_NAME> with the name of the branch you created earlier
+
+- Go back to https://github.com/redbadger/younglings.git
+
+- You should see a "recently pushed branches" section. Click the "Compare & pull request" button to open the pull request
+
+![](./instructions/create-pr.png)
+
+- Fill in the title and description and mark the pull request as "ready for review" by using a label
+
+![](./instructions/pr.png)
+
+- Review someone else's business card and when you're happy with the changes, change the label to "ready for branch test"
+
+- Test the business card using the URL provided earlier. If everything looks okay, change the label to "ready for merge test"
+
+- Merge the pull request using the button at the bottom of the page
+
+![](./instructions/merge.png)
+
+- Once the build finishes, you'll see the business card here:
+
+  ```
+  https://younglings-staging.s3-eu-west-1.amazonaws.com/index.html
+  ```
+
+- When everyone has finished putting their business cards together, we'll do a release to production. When the build finishes, the business cards can be found here:
+
+  ```
+  https://younglings-production.s3-eu-west-1.amazonaws.com/index.html
+  ```
