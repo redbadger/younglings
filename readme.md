@@ -19,16 +19,7 @@ This is a [Badger Way - Dev Edition](https://docs.google.com/presentation/d/1Rni
 
   - `template` ---> `paul-roper`
 
-- Develop a Red Badger business card as per design ![](./instructions/design.png)
-
-  - All assets (fonts and images) are linked to the HTML document so you don't need to do it
-  - We set a [solutions](./src/solution) folder, if you need a hint/clue/help
-  - Colours and font families are in your CSS template
-  - Please, follow these requirements
-    - [x] Business cards dimensions are 430px width and 300px height
-    - [x] Padding on back of the card is 50px;
-    - [ ] Front card font family is `proxima-nova-bold`
-    - [ ] Back card font family is `sentinel-bold`
+- Add your details to the business card ![](./instructions/design.png)
 
 - Push your changes and you can see it on the following enviroments
   - Testing
