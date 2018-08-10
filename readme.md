@@ -1,4 +1,4 @@
-## Younglings
+# Younglings
 
 ## What it is?
 
@@ -14,7 +14,7 @@ This is a [Badger Way - Dev Edition](https://docs.google.com/presentation/d/1Rni
 ## Instructions
 
 - Please _clone_ this repo to your _Desktop_ folder using the following URL `https://github.com/redbadger/younglings.git` ![](./instructions/clone.gif)
-- On GitHub Desktop create a new branch with your first and lastname ![](./instructions/new-branch.gif)
+- On GitHub Desktop create a new branch with your first and lastname in lowercase ![](./instructions/new-branch.gif)
 - Please, navigate to [`src/template`](../src/template) folder and copy and paste changing its name to your first and lastname
 
   - `template` ---> `paul-roper`
